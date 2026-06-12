@@ -1,0 +1,4 @@
+pandas>=2.0
+numpy>=1.24
+sqlalchemy>=2.0   # optional: swap sqlite3 for postgres
+psycopg2-binary   # optional: postgres driver
