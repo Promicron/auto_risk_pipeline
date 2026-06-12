@@ -1,0 +1,35 @@
+{
+  "run_timestamp": "2026-06-12T10:29:31.596276",
+  "dataset": "freMTPL2freq",
+  "total_policies": 678013,
+  "total_claims": 36102,
+  "avg_claim_frequency": 0.174,
+  "avg_composite_risk_score": 0.2527,
+  "avg_estimated_premium_eur": 568.31,
+  "risk_band_distribution": {
+    "Low": 447570,
+    "Very Low": 165786,
+    "Medium": 61481,
+    "High": 3077,
+    "Very High": 99
+  },
+  "risk_by_area": {
+    "A": 0.1809,
+    "B": 0.209,
+    "C": 0.2391,
+    "D": 0.2751,
+    "E": 0.3089,
+    "F": 0.3783
+  },
+  "risk_by_fuel": {
+    "Diesel": 0.2418,
+    "Regular": 0.2631
+  },
+  "top_risk_regions": {
+    "R11": 0.3333,
+    "R93": 0.2814,
+    "R31": 0.2766,
+    "R91": 0.2748,
+    "R82": 0.2645
+  }
+}
