@@ -2,7 +2,7 @@
 
 A small data pipeline demonstrating ingestion, normalization, risk scoring, and reporting for auto insurance datasets. The project supports two input modes:
 
-- `freMTPL2freq.csv` — The French freMTPL2freq dataset (single CSV). When present, the pipeline runs the `freMTPL2` adapter.
+- `freMTPL2freq.csv` — The French freMTPL2freq dataset (single CSV). When present, the pipeline runs the `freMTPL2` adapter. Dataset can be found [here](https://www.kaggle.com/datasets/floser/french-motor-claims-datasets-fremtpl2freq/data)
 - Tabular sample data (`drivers.csv`, `vehicles.csv`, `telematics.csv`, `claims.csv`) — the default demo flow.
 
 Project structure

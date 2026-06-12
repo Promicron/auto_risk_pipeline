@@ -37,25 +37,27 @@ def run(raw_dir: str = "data/raw", output_dir: str = "reports") -> None:
         logger.error("No source data found. Run: python data/generate_sample_data.py")
         sys.exit(1)
 
-    if "freMTPL2freq" in sources:
-        logger.info(" STAGE 2: NORMALIZE (freMTPL2freq) ")
-        merged = normalize_fremtpl2(sources["freMTPL2freq"])
+    def _dispatch_pipeline(sources_dict, out_dir: str):
+        if "freMTPL2freq" in sources_dict:
+            logger.info(" STAGE 2: NORMALIZE (freMTPL2freq) ")
+            merged_local = normalize_fremtpl2(sources_dict["freMTPL2freq"])
 
-        logger.info(" STAGE 3: RISK SCORING (freMTPL2freq) ")
-        scored = score_fremtpl2(merged)
+            logger.info(" STAGE 3: RISK SCORING (freMTPL2freq) ")
+            scored_local = score_fremtpl2(merged_local)
 
-        logger.info(" STAGE 4: REPORT (freMTPL2freq) ")
-        report_fremtpl2(scored, output_dir)
-    else:
-        logger.info(" STAGE 2: NORMALIZE ")
-        merged = normalize(sources)
+            logger.info(" STAGE 4: REPORT (freMTPL2freq) ")
+            report_fremtpl2(scored_local, out_dir)
+        else:
+            logger.info(" STAGE 2: NORMALIZE ")
+            merged_local = normalize(sources_dict)
 
-        logger.info(" STAGE 3: RISK SCORING ")
-        scored = score(merged)
+            logger.info(" STAGE 3: RISK SCORING ")
+            scored_local = score(merged_local)
 
-        logger.info(" STAGE 4: REPORT ")
-        report(scored, output_dir)
+            logger.info(" STAGE 4: REPORT ")
+            report(scored_local, out_dir)
 
+    _dispatch_pipeline(sources, output_dir)
     logger.info("Pipeline complete. Check output directory for results.")
 
 
